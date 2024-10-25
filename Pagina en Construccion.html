@@ -1,0 +1,169 @@
+<html><head>
+<title>En Construccion - Gravity Net</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Mystery+Quest&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-image: url('https://w.wallhaven.cc/full/ey/wallhaven-ey1glk.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  font-family: 'Mystery Quest', cursive;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.construction-container {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 3rem;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 800px;
+  border: 3px solid #ff9800;
+  position: relative;
+  overflow: hidden;
+}
+
+.construction-title {
+  font-size: 2.5rem;
+  color: #ff9800;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.construction-message {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #ffd700;
+}
+
+.journal-animation {
+  width: 150px;
+  height: 200px;
+  margin: 2rem auto;
+  animation: floatBook 3s ease-in-out infinite;
+}
+
+@keyframes floatBook {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+.return-button {
+  background: rgba(106, 13, 173, 0.5);
+  color: white;
+  border: 2px solid #ff9800;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-family: 'Mystery Quest', cursive;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 2rem;
+}
+
+.return-button:hover {
+  background: rgba(106, 13, 173, 0.8);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(255,152,0,0.3);
+}
+
+.magic-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+</style>
+</head>
+<body>
+<div class="construction-container">
+  <h1 class="construction-title">Pagina en Construccion</h1>
+  <p class="construction-message">Estamos leyendo los diarios detenidamente para poder acabar de crear esta parte de la Web</p>
+  
+  <img class="journal-animation" src="http://imgfz.com/i/Il9p4f2.png" alt="Logo Flotante" width="150" height="300">
+  
+  <div>
+    <a href="https://sites.google.com/view/gravity-net/" class="return-button">
+      Volver a la pagina principal
+    </a>
+  </div>
+
+  <canvas class="magic-particles"></canvas>
+</div>
+
+<script>
+// Partículas mágicas
+const canvas = document.querySelector('.magic-particles');
+const ctx = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const particles = [];
+
+class Particle {
+  constructor() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.size = Math.random() * 3;
+    this.speedX = Math.random() * 3 - 1.5;
+    this.speedY = Math.random() * 3 - 1.5;
+    this.color = `hsl(${Math.random() * 60 + 40}, 100%, 50%)`;
+  }
+
+  update() {
+    this.x += this.speedX;
+    this.y += this.speedY;
+    
+    if(this.x > canvas.width) this.x = 0;
+    if(this.x < 0) this.x = canvas.width;
+    if(this.y > canvas.height) this.y = 0;
+    if(this.y < 0) this.y = canvas.height;
+  }
+
+  draw() {
+    ctx.fillStyle = this.color;
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fill();
+  }
+}
+
+function init() {
+  for(let i = 0; i < 100; i++) {
+    particles.push(new Particle());
+  }
+}
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+  particles.forEach(particle => {
+    particle.update();
+    particle.draw();
+  });
+  
+  requestAnimationFrame(animate);
+}
+
+init();
+animate();
+
+// Resize handler
+window.addEventListener('resize', () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+</script>
+</body></html>

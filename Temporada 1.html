@@ -1,0 +1,245 @@
+<html><head>
+<title>Gravity Falls: Temporada 1</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Mystery+Quest&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-image: url('https://w.wallhaven.cc/full/ey/wallhaven-ey1glk.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: 'Mystery Quest', cursive;
+    color: #ffffff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 2rem 0;
+    position: relative;
+}
+
+.season-title {
+    font-size: 3rem;
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    margin-bottom: 1rem;
+    animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% { text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+    50% { text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 215, 0, 0.6); }
+}
+
+.season-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.season-poster {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    border: 3px solid #ff9800;
+    box-shadow: 0 0 20px rgba(255, 152, 0, 0.3);
+    width: 300px; /* Reducido el tamaño del poster */
+}
+
+.season-poster img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.season-poster:hover img {
+    transform: scale(1.05);
+}
+
+.watch-button {
+    background: #ff9800;
+    color: #000;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Mystery Quest', cursive;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.watch-button:hover {
+    background: #ffd700;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+.characters-section {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.characters-title {
+    color: #ffd700;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.characters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.character-card {
+    background: rgba(26, 26, 26, 0.9);
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid #ff9800;
+    transition: transform 0.3s ease;
+}
+
+.character-card:hover {
+    transform: translateY(-5px);
+}
+
+.character-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+    border: 2px solid #ff9800;
+}
+
+.character-card h3 {
+    color: #ffd700;
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    padding: 1rem 0;
+}
+
+.nav-button {
+    background: #ff9800;
+    color: #000;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Mystery Quest', cursive;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-button:hover {
+    background: #ffd700;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+.floating-bill {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px) rotate(5deg); }
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1 class="season-title">Temporada 1</h1>
+    </header>
+
+    <div class="season-info">
+        <div class="season-poster">
+            <img src="https://i.pinimg.com/564x/19/f6/a3/19f6a3ac5b9a9500108c7f585eb27283.jpg" alt="Poster Temporada 1 de Gravity Falls" width="300" height="450">
+        </div>
+        <a href="Pagina en Construccion.html" class="watch-button">
+            Ver Temporada 1
+            <i class="fas fa-play-circle"></i>
+        </a>
+    </div>
+
+    <div class="characters-section">
+        <h2 class="characters-title">Personajes Principales</h2>
+        <div class="characters-grid">
+            <div class="character-card">
+                <img src="https://pm1.aminoapps.com/6436/88fa910c1f70633ccbcf77fbfdb2f7ca2f91328e_00.jpg" alt="Dipper Pines" width="100" height="100">
+                <h3>Dipper Pines</h3>
+            </div>
+            <div class="character-card">
+                <img src="https://pm1.aminoapps.com/6332/acea30b188c8d5fffb49bfd4ad4a798c70cf9620_00.jpg" alt="Mabel Pines" width="100" height="100">
+                <h3>Mabel Pines</h3>
+            </div>
+            <div class="character-card">
+                <img src="https://static.wikia.nocookie.net/gravityfallsbr/images/d/d4/Mabeloka-0.png/revision/latest?cb=20200413172117&path-prefix=pt-br" alt="Stanley Pines" width="100" height="100">
+                <h3>Tío Stan</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <a href="index.html" class="nav-button">
+            <i class="fas fa-home"></i>
+            Volver al inicio
+        </a>
+        <a href="Temporada 2.html" class="nav-button">
+            Temporada 2
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <img class="floating-bill" src="http://imgfz.com/i/3cuFbY9.png" alt="Bill Cipher" width="80" height="80">
+</div>
+
+<script>
+document.querySelector('.floating-bill').addEventListener('mousemove', (e) => {
+    const eye = document.querySelector('.floating-bill');
+    const rect = eye.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width;
+    const y = (e.clientY - rect.top) / rect.height;
+    
+    eye.style.transform = `
+        rotate(${(x - 0.5) * 20}deg)
+        scale(${1 + ((y - 0.5) * 0.2)})
+    `;
+});
+</script>
+</body></html>

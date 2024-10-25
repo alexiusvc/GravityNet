@@ -1,0 +1,515 @@
+<!DOCTYPE html><html><head>
+<title>Gravity Net: Misterios de Gravity Falls</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Mystery+Quest&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-image: url('https://w.wallhaven.cc/full/ey/wallhaven-ey1glk.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  font-family: 'Mystery Quest', cursive;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  padding: 1rem 0;
+  position: relative;
+}
+
+.logo-img {
+  width: 400px;
+  height: auto;
+  animation: floatText 3s ease-in-out infinite;
+}
+
+.description {
+  max-width: 800px;
+  margin: 1rem auto;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #ffd700;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  padding: 1rem;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 10px;
+  border: 1px solid #ff9800;
+}
+
+@keyframes floatText {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.sections-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  padding: 2rem;
+}
+
+.section {
+  background: rgba(26, 26, 26, 0.8);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #ff9800;
+}
+
+.section:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(106, 13, 173, 0.3),
+    0 0 40px rgba(255, 152, 0, 0.2);
+}
+
+.journal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.journal {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.journal img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+}
+
+.journal:hover img {
+  transform: scale(1.05) rotate(2deg);
+}
+
+.journal:hover::after {
+  content: "Click para ver el diario";
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffd700;
+  font-size: 0.9rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.season-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.season-card {
+  position: relative;
+  background: rgba(106, 13, 173, 0.3);
+  border-radius: 15px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+  border: 2px solid #ff9800;
+  cursor: pointer;
+}
+
+.season-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.season-card:hover {
+  transform: scale(1.05);
+}
+
+.contact-section {
+  background: rgba(26, 26, 26, 0.8);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-top: 3rem;
+  text-align: center;
+  border: 2px solid #ff9800;
+}
+
+.bill-eye {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.bill-eye:hover {
+  transform: scale(1.1) rotate(10deg);
+}
+
+.copyright {
+  text-align: center;
+  padding: 1rem;
+  background-color: rgba(0,0,0,0.8);
+  color: #999;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+  border-top: 1px solid #ff9800;
+}
+
+.contact-buttons button {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-buttons button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(255,255,255,0.2);
+}
+
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <img class="logo-img" src="http://imgfz.com/i/Il9p4f2.png" alt="Gravity Falls Logo" width="400" height="150">
+    <div class="description">
+      Bienvenidos a Gravity Net, acá podras encontrar los diarios completos, libros, comics de la serie, podrás encontrar donde ver la serie completa y todo lo relacionado a Gravity Falls. Este Proyecto lo lleva de la mano AlexBoss junto a Zynthro Studio (Equipo de Trabajo). No queremos ni nos beneficiamos economicamente con esta web, lo que queremos es que los fans de esta serie puedan encontrar un espacio lleno de datos y cosas de la Serie. Gracias por estar en Gravity Net.
+    </div>
+  </header>
+
+  <div class="sections-container">
+    <div class="section">
+      <h2>Diarios y Libros</h2>
+      <div class="journal-grid">
+        <div class="journal" onclick="window.location.href='Diario 1.html'">
+          <img src="https://i.pinimg.com/564x/de/22/db/de22dbd7e7ebe9a407100a470fe5ec01.jpg" alt="Diario 1" width="200" height="300">
+        </div>
+        <div class="journal" onclick="window.location.href='Diario 2.html'">
+          <img src="https://i.pinimg.com/564x/f2/f4/07/f2f407c158a3f7ef07931f6c2a2d0ea5.jpg" alt="Diario 2" width="200" height="300">
+        </div>
+        <div class="journal" onclick="window.location.href='Diario 3.html'">
+          <img src="https://i.pinimg.com/564x/e6/32/97/e63297b655144db48dc7d113aa5e8245.jpg" alt="Diario 3" width="200" height="300">
+        </div>
+        <div class="journal" onclick="window.location.href='El Libro de Bill.html'">
+          <img src="https://i.pinimg.com/736x/fd/a2/4c/fda24c5470ea7291286e0652487afbde.jpg" alt="El Libro de Bill" width="200" height="300">
+        </div>
+        <div class="journal" onclick="window.location.href='Gravity Falls. Leyendas perdidas.html'">
+          <img src="https://i.pinimg.com/564x/7b/9d/a4/7b9da4c2b1c172028651fe82e2eefb94.jpg" alt="Gravity Falls. Leyendas perdidas" width="200" height="300">
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Temporadas</h2>
+      <div class="season-container">
+        <div class="season-card" onclick="window.location.href='Temporada 1.html'">
+          <img src="https://i.pinimg.com/564x/19/f6/a3/19f6a3ac5b9a9500108c7f585eb27283.jpg" alt="Temporada 1" width="300" height="400">
+          <h3>Temporada 1</h3>
+        </div>
+        <div class="season-card" onclick="window.location.href='Temporada 2.html'">
+          <img src="https://i.pinimg.com/564x/51/a0/d1/51a0d19c8829436098693c6f96f09799.jpg" alt="Temporada 2" width="300" height="400">
+          <h3>Temporada 2</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" style="margin-top: 3rem;">
+    <h2>Topics</h2>
+    
+    <div class="search-container" style="
+        margin: 2rem 0;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    ">
+        <input type="text" id="searchInput" placeholder="Buscar temas..." style="
+            padding: 0.8rem;
+            width: 60%;
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid #ff9800;
+            border-radius: 5px;
+            color: white;
+            font-family: 'Mystery Quest', cursive;
+            font-size: 1rem;
+        ">
+        <button onclick="searchTopics()" style="
+            background: rgba(106, 13, 173, 0.5);
+            color: white;
+            border: 2px solid #ff9800;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Mystery Quest', cursive;
+            transition: all 0.3s ease;
+        ">
+            <i class="fas fa-search"></i> Buscar
+        </button>
+    </div>
+
+    <div class="topics-container" style="
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+    ">
+    </div>
+
+    <div class="pagination" style="
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
+        align-items: center;
+    ">
+    </div>
+
+    <script>
+        // Datos de ejemplo
+        const allTopics = [
+            {
+                title: "Bienvenidos a GravityNet",
+                description: "Descubre Sobre nuestra Web.",
+                date: "24 Octubre 2024",
+                url: "#"
+            },
+        ];
+
+        let currentPage = 1;
+        const itemsPerPage = 3;
+
+        function createTopicCard(topic) {
+            const card = document.createElement('div');
+            card.className = 'topic-card';
+            card.style.cssText = `
+                background: rgba(0, 0, 0, 0.5);
+                border: 2px solid #ff9800;
+                border-radius: 10px;
+                padding: 1.5rem;
+                transition: all 0.3s ease;
+                cursor: pointer;
+            `;
+
+            card.innerHTML = `
+                <h3>${topic.title}</h3>
+                <p>${topic.description}</p>
+                <span class="date">${topic.date}</span>
+            `;
+
+            card.addEventListener('click', () => {
+                window.location.href = topic.url;
+            });
+
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-5px)';
+                card.style.boxShadow = '0 5px 15px rgba(255, 152, 0, 0.3)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+                card.style.boxShadow = 'none';
+            });
+
+            return card;
+        }
+
+        function createPaginationButtons() {
+            const paginationContainer = document.querySelector('.pagination');
+            paginationContainer.innerHTML = '';
+            
+            const totalPages = Math.ceil(allTopics.length / itemsPerPage);
+            
+            for (let i = 1; i <= totalPages; i++) {
+                const pageNum = document.createElement('span');
+                pageNum.textContent = i;
+                pageNum.style.cssText = `
+                    color: ${currentPage === i ? '#ff9800' : 'white'};
+                    cursor: pointer;
+                    margin: 0 0.5rem;
+                    font-size: 1.2rem;
+                    text-decoration: ${currentPage === i ? 'underline' : 'none'};
+                    transition: all 0.3s ease;
+                `;
+                
+                pageNum.addEventListener('click', () => {
+                    currentPage = i;
+                    displayTopics();
+                });
+
+                pageNum.addEventListener('mouseenter', () => {
+                    if (currentPage !== i) {
+                        pageNum.style.color = '#ff9800';
+                    }
+                });
+
+                pageNum.addEventListener('mouseleave', () => {
+                    if (currentPage !== i) {
+                        pageNum.style.color = 'white';
+                    }
+                });
+                
+                paginationContainer.appendChild(pageNum);
+            }
+        }
+
+        function displayTopics() {
+            const container = document.querySelector('.topics-container');
+            container.innerHTML = '';
+            
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const topicsToShow = allTopics.slice(startIndex, endIndex);
+
+            topicsToShow.forEach(topic => {
+                container.appendChild(createTopicCard(topic));
+            });
+
+            createPaginationButtons();
+        }
+
+        function searchTopics() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const filteredTopics = allTopics.filter(topic => 
+                topic.title.toLowerCase().includes(searchTerm) || 
+                topic.description.toLowerCase().includes(searchTerm)
+            );
+
+            const container = document.querySelector('.topics-container');
+            container.innerHTML = '';
+
+            if (filteredTopics.length > 0) {
+                currentPage = 1;
+                allTopics.length = 0;
+                allTopics.push(...filteredTopics);
+                displayTopics();
+            } else {
+                container.innerHTML = '<p style="text-align: center; color: #ff9800;">No se encontraron resultados</p>';
+                document.querySelector('.pagination').innerHTML = '';
+            }
+        }
+
+        // Mostrar los primeros temas al cargar
+        displayTopics();
+    </script>
+</div>
+
+  <div class="contact-section">
+    <h2>¡Contáctanos!</h2>
+    <p>¿Tienes algún misterio que compartir? ¿Deseas Que agreguemos o traigamos algo en especifico a la web?</p>
+    <p>¡Escribenos por nuestras redes sociales y agregaremos a la web lo que necesites!</p>
+    
+    <div class="contact-buttons" style="display: flex; justify-content: center; gap: 2rem; margin-top: 2rem;">
+      <a href="https://wa.me/+6285282568927" target="_blank" style="text-decoration: none;">
+        <button style="
+          background: #25D366;
+          color: white;
+          border: none;
+          padding: 1rem 2rem;
+          border-radius: 10px;
+          font-family: 'Mystery Quest', cursive;
+          font-size: 1.1rem;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        ">
+          <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i>
+          WhatsApp
+        </button>
+      </a>
+      
+      <a href="https://www.youtube.com/@Alexiusss_VC" target="_blank" style="text-decoration: none;">
+        <button style="
+          background: #FF0000;
+          color: white;
+          border: none;
+          padding: 1rem 2rem;
+          border-radius: 10px;
+          font-family: 'Mystery Quest', cursive;
+          font-size: 1.1rem;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        ">
+          <i class="fab fa-youtube" style="font-size: 1.5rem;"></i>
+          YouTube
+        </button>
+      </a>
+      
+      <a href="https://www.instagram.com/aleexz_0" target="_blank" style="text-decoration: none;">
+        <button style="
+          background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+          color: white;
+          border: none;
+          padding: 1rem 2rem;
+          border-radius: 10px;
+          font-family: 'Mystery Quest', cursive;
+          font-size: 1.1rem;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        ">
+          <i class="fab fa-instagram" style="font-size: 1.5rem;"></i>
+          Instagram
+        </button>
+      </a>
+    </div>
+  </div>
+
+  <img class="bill-eye" src="http://imgfz.com/i/3cuFbY9.png" alt="Bill Cipher Eye" width="100" height="100">
+
+  <div class="copyright">
+    <p>© 2024 Gravity Net. Todos los derechos reservados.</p>
+    <p>Gravity Falls es una creación de Alex Hirsch y propiedad de Disney Television Animation.</p>
+    <p>Esta página web es un tributo creado por fans para fans.</p>
+    <p>Gravity Net by AlexBoss - Zynthro Studio</p>
+  </div>
+</div>
+
+<script>
+document.querySelector('.bill-eye').addEventListener('mousemove', (e) => {
+  const eye = document.querySelector('.bill-eye');
+  const rect = eye.getBoundingClientRect();
+  const x = (e.clientX - rect.left) / rect.width;
+  const y = (e.clientY - rect.top) / rect.height;
+  
+  eye.style.transform = `
+    rotate(${(x - 0.5) * 20}deg)
+    scale(${1 + ((y - 0.5) * 0.2)})
+  `;
+});
+
+// Añadir efectos de sonido al hacer hover sobre los diarios
+const journals = document.querySelectorAll('.journal');
+journals.forEach(journal => {
+  journal.addEventListener('mouseenter', () => {
+    const audio = new Audio('https://www.soundjay.com/misc/sounds/page-flip-01a.mp3');
+    audio.volume = 0.2;
+    audio.play();
+  });
+});
+</script>
+</body></html>
